@@ -1,8 +1,14 @@
 <%= form_tag '/challenges/check' do%>
+<p>Input string:</p>
+<div style="border:2px solid;float: left;">
 <%= @string %>
+</div>
 <%= hidden_field_tag 'string', @string %>
 <br><br>
+<p>Desired output:</p>
+<div style="border:2px solid;float: left;">
 <%= @expected_output %>
+</div>
 <%= hidden_field_tag 'expected_output', @expected_output %>
 <br><br>
 <%= label_tag 'submission', 'Regex' %>
