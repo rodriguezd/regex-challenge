@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+ html, body{
+  height: 100%;
+ }
+
+ .container-fluid {
+  height: 100%;
+ }
+
+ .row-fluid {
+  height: 100%;
+ }

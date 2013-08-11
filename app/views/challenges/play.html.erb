@@ -1,0 +1,14 @@
+<%= form_tag '/challenges/check' do%>
+<%= @string %>
+<%= hidden_field_tag 'string', @string %>
+<br><br>
+<%= @expected_output %>
+<%= hidden_field_tag 'expected_output', @expected_output %>
+<br><br>
+<%= label_tag 'submission', 'Regex' %>
+\<%= text_field_tag 'submission'%>\
+<%= button_tag 'Submit Regex', :data => {'string' => @string} %>
+
+<% end %>
+<br><br>
+<%= @result %>
