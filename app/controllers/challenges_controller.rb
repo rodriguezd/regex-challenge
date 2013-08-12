@@ -1,8 +1,12 @@
 class ChallengesController < ApplicationController
 
   def play
-    @string = "I am the 123 bandit name Tweety Tweet."
-    @expected_output = "am name"
+    id = rand(1..InputString.count)
+    input_string = InputString.find(id)
+    @string = input_string.string
+    id = rand(1..input_string.output_strings.count)
+    output_string = OutputString.find(id)
+    @expected_output = output_string.string
   end
 
   def check
