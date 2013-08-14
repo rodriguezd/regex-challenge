@@ -1,6 +1,6 @@
-<%= form_tag '/challenges/check' do%>
+<%= form_tag '/challenges/regex_check' do%>
 <h3>Input string:</h3>
-<div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;padding-left: 20px;background-color: #E2E9E7">
+<div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
   <%= @string %>
 </div>
 <%= hidden_field_tag :string, @string %>
@@ -11,7 +11,7 @@
 </div>
 <%= hidden_field_tag :expected_output, @expected_output %>
 <br><br>
-<h3> Regex </h3>
+<h3> Regex: </h3>
 <div class="input-prepend input-append span4">
   <span class="add-on">\</span>
   <input name="submission" value="<%= @submission %>"class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
@@ -24,7 +24,7 @@
 
 <% if @correct == true %>
   <h2 style="color: red">Great job!</h2>
-  <%= link_to 'Next', challenges_play_path, :class => "btn btn-primary"%>
+  <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-primary"%>
 <% elsif @correct == false %>
   <h2 style="color: blue">Not quite.</h2>
    <h3>Your current output:</h3>

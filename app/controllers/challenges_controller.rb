@@ -1,17 +1,17 @@
 class ChallengesController < ApplicationController
 
-  def play
+  def regex_play
     id = rand(1..InputString.count)
     input_string = InputString.find(id)
     @string = input_string.string
-    id = rand(1..input_string.output_strings.count)
+    id = input_string.output_strings.map{|string| string.id}.sample
     output_string = OutputString.find(id)
     @expected_output = output_string.string
     @correct = ' '
     @submission = ""
   end
 
-  def check
+  def regex_check
     # raise params.inspect
     @submission = params[:submission]
     @string = params[:string]
@@ -23,9 +23,7 @@ class ChallengesController < ApplicationController
     else
       @correct = false
     end
-
-
-    render :action => :play
+    render :action => :regex_play
   end
 
 end
