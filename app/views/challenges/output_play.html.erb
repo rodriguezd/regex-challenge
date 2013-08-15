@@ -1,3 +1,5 @@
+<h1 style="text-align: center;color: orange;">* Regex Challenge *</h1>
+<%= link_to 'Regex Challenge', challenges_regex_play_path, :class => "btn btn-warning" %>
 <%= form_tag '/challenges/output_check' do%>
 <h3>Input string:</h3>
 <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
@@ -13,9 +15,9 @@
 <br><br>
 <h3> Output: </h3>
 <div class="input-prepend input-append span4">
-  <span class="add-on">"</span>
+  <span class="add-on"><b>"</b></span>
   <input name="submission" value="<%= @submission %>"class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
-  <span class="add-on">"</span>
+  <span class="add-on"><b>"</b></span>
 </div>
 <br><br>
 <%= button_tag 'Submit Output', :class => "btn btn-primary" %>
@@ -24,11 +26,11 @@
 
 <% if @correct == true %>
   <h2 style="color: red">Great job!</h2>
-  <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-primary"%>
+  <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-primary"%>
 <% elsif @correct == false %>
   <h2 style="color: blue">Not quite.</h2>
-   <h3>Your current output:</h3>
+   <!-- <h3>Your current output:</h3>
   <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7"">
     <%= @current_output %>
-  </div>
+  </div> -->
 <% end %>

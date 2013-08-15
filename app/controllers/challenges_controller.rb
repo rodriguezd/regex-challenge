@@ -37,4 +37,19 @@ class ChallengesController < ApplicationController
     @submission = ""
   end
 
+  def output_check
+    # raise params.inspect
+    @submission = params[:submission]
+    @input = params[:input]
+    @regex = params[:regex]
+    # debugger
+    @correct_output = @input.scan(eval("/#{@regex}/")).flatten.join(' ')
+    if @submission == @correct_output
+      @correct = true
+    else
+      @correct = false
+    end
+    render :action => :output_play
+  end
+
 end

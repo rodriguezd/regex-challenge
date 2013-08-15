@@ -3,8 +3,10 @@ RegexChallenge::Application.routes.draw do
   get 'challenges/regex_play' => 'challenges#regex_play'
   post 'challenges/regex_check' => 'challenges#regex_check'
 
-  get 'challenges/ouput_play' => 'challenges#output_play'
+  get 'challenges/output_play' => 'challenges#output_play'
   post 'challenges/output_check' => 'challenges#output_check'
+
+  root :to => 'challenges#regex_play'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -61,5 +63,5 @@ RegexChallenge::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
+  #match ':controller(/:action(/:id))(.:format)'
 end
