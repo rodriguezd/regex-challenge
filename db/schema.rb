@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811211458) do
+ActiveRecord::Schema.define(:version => 20130814220256) do
+
+  create_table "in_string_regexes", :force => true do |t|
+    t.integer  "regex_id"
+    t.integer  "in_string_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "in_strings", :force => true do |t|
+    t.text     "string"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "input_output_strings", :force => true do |t|
     t.integer  "output_string_id"
@@ -32,6 +45,12 @@ ActiveRecord::Schema.define(:version => 20130811211458) do
     t.integer  "input_string_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "regexes", :force => true do |t|
+    t.string   "expression"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

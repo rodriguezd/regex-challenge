@@ -26,4 +26,15 @@ class ChallengesController < ApplicationController
     render :action => :regex_play
   end
 
+  def output_play
+    id = rand(1..InString.count)
+    input_string = InString.find(id)
+    @input = input_string.string
+    id = input_string.regexs.map{|regex| regex.id}.sample
+    regex = Regex.find(id)
+    @regex = regex.expression
+    @correct = ' '
+    @submission = ""
+  end
+
 end

@@ -2,6 +2,10 @@ RegexChallenge::Application.routes.draw do
 
   get 'challenges/regex_play' => 'challenges#regex_play'
   post 'challenges/regex_check' => 'challenges#regex_check'
+
+  get 'challenges/ouput_play' => 'challenges#output_play'
+  post 'challenges/output_check' => 'challenges#output_check'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

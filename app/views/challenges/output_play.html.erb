@@ -1,34 +1,34 @@
-<%= form_tag '/challenges/regex_check' do%>
+<%= form_tag '/challenges/output_check' do%>
 <h3>Input string:</h3>
 <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
-  <%= @string %>
+  <%= @input %>
 </div>
-<%= hidden_field_tag :string, @string %>
+<%= hidden_field_tag :input, @input %>
 <br><br>
-<h3>Desired output:</h3>
+<h3>Regex:</h3>
 <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
-    <%= @expected_output %>
+    /<%= @regex %>/
 </div>
-<%= hidden_field_tag :expected_output, @expected_output %>
+<%= hidden_field_tag :regex, @regex %>
 <br><br>
-<h3> Regex: </h3>
+<h3> Output: </h3>
 <div class="input-prepend input-append span4">
-  <span class="add-on">\</span>
+  <span class="add-on">"</span>
   <input name="submission" value="<%= @submission %>"class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
-  <span class="add-on">\</span>
+  <span class="add-on">"</span>
 </div>
 <br><br>
-<%= button_tag 'Submit Regex', :class => "btn btn-primary" %>
+<%= button_tag 'Submit Output', :class => "btn btn-primary" %>
 
 <% end %>
 
 <% if @correct == true %>
   <h2 style="color: red">Great job!</h2>
-  <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-primary"%>
+  <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-primary"%>
 <% elsif @correct == false %>
   <h2 style="color: blue">Not quite.</h2>
-   <!-- <h3>Your current output:</h3>
+   <h3>Your current output:</h3>
   <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7"">
     <%= @current_output %>
-  </div> -->
+  </div>
 <% end %>
