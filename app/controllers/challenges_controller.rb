@@ -12,11 +12,10 @@ class ChallengesController < ApplicationController
   end
 
   def regex_check
-    # raise params.inspect
+    @time = params[:time].split(',')
     @submission = params[:submission]
     @string = params[:string]
     @expected_output = params[:expected_output]
-    # debugger
     @current_output = @string.scan(eval("/#{@submission}/")).flatten.join(' ')
     if @current_output == @expected_output
       @correct = true
@@ -38,11 +37,10 @@ class ChallengesController < ApplicationController
   end
 
   def output_check
-    # raise params.inspect
+    @time = params[:time].split(',')
     @submission = params[:submission]
     @input = params[:input]
     @regex = params[:regex]
-    # debugger
     @correct_output = @input.scan(eval("/#{@regex}/")).flatten.join(' ')
     if @submission == @correct_output
       @correct = true

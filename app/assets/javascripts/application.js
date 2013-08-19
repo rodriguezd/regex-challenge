@@ -15,6 +15,21 @@
 //= require_tree .
 
 $(function() {
-  $('#sinceCompact').countdown({since: 0, compact: true,
+  var reset_time = $("#time").val();
+  console.log(reset_time.split(' '));
+  $('#sinceCompact').countdown({since: '-' + reset_time.split(' ')[5] + 'm '+ '-' + reset_time.split(' ')[6] + 's', compact: true,
     format: 'MS', description: ''});
+
+
+  $("#submit").click(function() {
+    var time = $('#sinceCompact').countdown('getTimes');
+    $("#time").val(time);
+  //  return false;
+
+  });
+
+
+
+
+
 });
