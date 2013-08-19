@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+  $('#sinceCompact').countdown({since: 0, compact: true,
+    format: 'MS', description: ''});
+});

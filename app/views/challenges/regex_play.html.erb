@@ -30,7 +30,17 @@
 <% elsif @correct == false %>
   <h2 style="color: blue">Not quite.</h2>
    <h3>Your current output:</h3>
-  <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7"">
+  <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
     <%= @current_output %>
   </div>
 <% end %>
+
+  Timer:<br>
+  <span id="sinceCompact" class="countdown">
+    <span class="countdown_row countdown_amount">
+      <!-- <span class="countdown_section"></span> -->
+      <!-- <span class="countdown_section"></span> -->
+    </span>
+  </span>
+
+
