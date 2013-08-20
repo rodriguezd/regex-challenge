@@ -6,6 +6,9 @@ RegexChallenge::Application.routes.draw do
   get 'challenges/output_play' => 'challenges#output_play'
   post 'challenges/output_check' => 'challenges#output_check'
 
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy', :as => :signout
+
   root :to => 'challenges#regex_play'
 
   # The priority is based upon order of creation:
