@@ -20,8 +20,12 @@
   padding: 0;
  }
 
- html {
+ #landing-container {
   background: url("regex.jpg") center center fixed;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
  }
 
  .container-fluid {
@@ -32,6 +36,9 @@
   height: 100%;
  }
 
+ #landing-title{
+background-color: aqua;
+ }
  /*.centering{
 float:none;
 margin:0 auto
