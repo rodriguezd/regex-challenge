@@ -8,13 +8,20 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require bootstrap-responsive.css
+ *= bootstrap.css
+ *= jquery.countdown.css
  *= require_self
- *= require_tree .
  */
 
  html, body{
   height: 100%;
-  margin: 1%;
+  margin: 0;
+  padding: 0;
+ }
+
+ html {
+  background: url("regex.jpg") center center fixed;
  }
 
  .container-fluid {
@@ -24,3 +31,9 @@
  .row-fluid {
   height: 100%;
  }
+
+ /*.centering{
+float:none;
+margin:0 auto
+}
+*/
