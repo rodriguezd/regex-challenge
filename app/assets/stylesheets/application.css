@@ -11,7 +11,7 @@
  *= require bootstrap-responsive.css
  *= require bootstrap.css
  *= require jquery.countdown.css
- * require site.css.scss
+ *= require site.css.scss
  *= require_self
  */
 
@@ -21,13 +21,13 @@
   padding: 0;
  }
 
- #landing-container {
+ /*#landing-container {
   background: url("regex.jpg") center center fixed;
   position: absolute;
   left: 0;
   width: 100%;
   margin: 0;
- }
+ }*/
 
  .container-fluid {
   height: 100%;
@@ -37,9 +37,7 @@
   height: 100%;
  }
 
- #landing-title{
-background-color: aqua;
- }
+
  /*.centering{
 float:none;
 margin:0 auto
