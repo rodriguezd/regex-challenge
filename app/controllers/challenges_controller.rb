@@ -24,7 +24,7 @@ class ChallengesController < ApplicationController
     else
       @correct = false
     end
-    render :action => :regex_play
+    # render :action => :regex_play
   end
 
   def output_play

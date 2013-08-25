@@ -1,0 +1,10 @@
+<% if @correct == true %>
+  <h2 style="color: red">Great job!</h2>
+  <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-primary"%>
+<% elsif @correct == false %>
+  <h2 style="color: blue">Not quite.</h2>
+   <h3>Your current output:</h3>
+  <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
+    <%= @current_output %>
+  </div>
+<% end %>

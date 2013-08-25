@@ -9,7 +9,7 @@ Welcome <%= current_user.name %>
     <div class="span6">
       <%= link_to 'Output Challenge', challenges_output_play_path, :class => "btn btn-warning" %>
 
-      <%= form_tag '/challenges/regex_check' do%>
+      <%= form_tag challenges_regex_check_path, :remote => true do%>
         <h3>Input string:</h3>
         <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
           <%= @string %>
@@ -38,18 +38,9 @@ Welcome <%= current_user.name %>
         <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-warning"%>
         <%= hidden_field_tag :time, @time, :id => "time"%>
       <% end %>
+      <div id="results">
 
-      <% if @correct == true %>
-        <h2 style="color: red">Great job!</h2>
-        <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-primary"%>
-      <% elsif @correct == false %>
-        <h2 style="color: blue">Not quite.</h2>
-         <h3>Your current output:</h3>
-        <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
-          <%= @current_output %>
-        </div>
-
-      <% end %>
+      </div>
     </div>
     <div class="span6">
       <div class="span8" id="friends_list" style="height: 200px; border: 2px solid; clear:right; margin-bottom: 3%;">
