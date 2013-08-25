@@ -1,6 +1,7 @@
 class ChallengesController < ApplicationController
 
   def regex_play
+    @friends = User.all
     id = rand(1..InputString.count)
     input_string = InputString.find(id)
     @string = input_string.string
@@ -12,6 +13,7 @@ class ChallengesController < ApplicationController
   end
 
   def regex_check
+    @friends = User.all
     @time = params[:time].split(',')
     @submission = params[:submission]
     @string = params[:string]
@@ -48,6 +50,10 @@ class ChallengesController < ApplicationController
       @correct = false
     end
     render :action => :output_play
+  end
+
+  def friends_list
+    @friends = User.all
   end
 
 end

@@ -8,6 +8,8 @@ RegexChallenge::Application.routes.draw do
   get 'challenges/output_play' => 'challenges#output_play'
   post 'challenges/output_check' => 'challenges#output_check'
 
+  get 'challenges/friends_list' => 'challenges#friends_list'
+
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', :as => :signout
 

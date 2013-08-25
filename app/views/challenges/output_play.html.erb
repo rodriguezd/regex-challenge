@@ -17,7 +17,7 @@
   <h3> Output: </h3>
   <div class="input-prepend input-append span4">
     <span class="add-on"><b>"</b></span>
-    <input name="submission" value="<%= @submission %>"class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
+    <input name="submission" value="<%= @submission %>" class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
     <span class="add-on"><b>"</b></span>
   </div>
   <br><br>
@@ -25,7 +25,8 @@
   <span class="countdown_row countdown_amount"></span>
   </span>
   <br><br>
-  <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "submit" %>
+  <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "submit" %><br><br>
+  <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-warning"%>
   <%= hidden_field_tag :time, @time, :id => "time"%>
 <% end %>
 
