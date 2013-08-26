@@ -1,4 +1,5 @@
 <% if @correct == true  %>
+  $('#sinceCompact').countdown('pause');
   $('#submit').hide();
   $('#next_challenge').hide();
   $('#leader_board').html('<%= j render "shared/leader_board" %>');
