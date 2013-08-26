@@ -31,7 +31,7 @@
         <span class="countdown_row countdown_amount"></span>
         </span>
         <br><br>
-        <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "output_submit" %><br><br>
+        <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "submit" %><br><br>
         <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-warning", :id => "next_challenge" %>
         <%= hidden_field_tag :time, @time, :id => "time"%>
       <% end %>

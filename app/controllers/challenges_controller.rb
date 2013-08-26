@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
     challenge = InputOutputString.find(@challenge_id)
     @string = InputString.find(challenge.input_string_id).string
     @expected_output = OutputString.find(challenge.output_string_id).string
+    @board_times = RegexChallengeUserTime.where(:input_output_id => @challenge_id)
     @correct = ' '
     @submission = ""
   end
@@ -23,6 +24,7 @@ class ChallengesController < ApplicationController
       RegexChallengeUserTime.create(:user_id => current_user.id,
         :input_output_id => params[:challenge_id],
         :time => user_time)
+      @board_times = RegexChallengeUserTime.where(:input_output_id => params[:challenge_id])
     else
       @correct = false
     end

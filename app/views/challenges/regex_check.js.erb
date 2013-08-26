@@ -1,5 +1,6 @@
 <% if @correct == true  %>
-  $('#regex_submit').hide();
+  $('#submit').hide();
   $('#next_challenge').hide();
+  $('#leader_board').html('<%= j render "shared/leader_board" %>');
 <% end %>
 $('#regex_results').html('<%= j render "regex_results" %>');
