@@ -34,9 +34,9 @@ Welcome <%= current_user.name %>
         <span class="countdown_row countdown_amount"></span>
         </span>
         <br><br>
-        <%= button_tag 'Submit Regex', :class => "btn btn-primary", :id => "submit" %>
+        <%= button_tag 'Submit Regex', :class => "btn btn-primary", :id => "regex_submit" %>
         <br><br>
-        <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-warning"%>
+        <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-warning", :id => "next_challenge" %>
         <%= hidden_field_tag :time, @time, :id => "time"%>
       <% end %>
       <div id="regex_results">

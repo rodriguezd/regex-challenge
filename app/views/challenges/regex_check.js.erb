@@ -1,1 +1,5 @@
+<% if @correct == true  %>
+  $('#regex_submit').hide();
+  $('#next_challenge').hide();
+<% end %>
 $('#regex_results').html('<%= j render "regex_results" %>');

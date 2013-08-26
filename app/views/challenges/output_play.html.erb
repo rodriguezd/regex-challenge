@@ -12,6 +12,7 @@
           <%= @input %>
         </div>
         <%= hidden_field_tag :input, @input %>
+        <%= hidden_field_tag :challenge_id, @challenge_id %>
         <br><br>
         <h3>Regex:</h3>
         <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
@@ -30,8 +31,8 @@
         <span class="countdown_row countdown_amount"></span>
         </span>
         <br><br>
-        <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "submit" %><br><br>
-        <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-warning"%>
+        <%= button_tag 'Submit Output', :class => "btn btn-primary", :id => "output_submit" %><br><br>
+        <%= link_to 'Next Challenge', challenges_output_play_path, :class => "btn btn-warning", :id => "next_challenge" %>
         <%= hidden_field_tag :time, @time, :id => "time"%>
       <% end %>
       <div id="output_results">

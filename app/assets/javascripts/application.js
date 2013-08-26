@@ -38,4 +38,6 @@ $(function() {
     $("#exit_arena").hide();
     $("#enter_arena").show();
   });
+
+
 });
