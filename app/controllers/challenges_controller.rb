@@ -28,6 +28,7 @@ class ChallengesController < ApplicationController
   end
 
   def output_play
+    @friends = User.all
     id = rand(1..InString.count)
     input_string = InString.find(id)
     @input = input_string.string
@@ -39,6 +40,7 @@ class ChallengesController < ApplicationController
   end
 
   def output_check
+    @friends = User.all
     @time = params[:time].split(',')
     @submission = params[:submission]
     @input = params[:input]
@@ -49,7 +51,7 @@ class ChallengesController < ApplicationController
     else
       @correct = false
     end
-    render :action => :output_play
+    # render :action => :output_play
   end
 
   def friends_list
