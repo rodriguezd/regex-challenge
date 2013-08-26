@@ -1,5 +1,9 @@
 RegexChallenge::Application.routes.draw do
 
+  get "users/enter_arena" => 'users#enter_arena'
+
+  get "users/exit_arena" => 'users#exit_arena'
+
   get "site/landing"
 
   get 'challenges/regex_play' => 'challenges#regex_play'

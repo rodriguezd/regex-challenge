@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820212225) do
+ActiveRecord::Schema.define(:version => 20130826151457) do
 
   create_table "in_string_regexes", :force => true do |t|
     t.integer  "regex_id"
@@ -58,8 +58,9 @@ ActiveRecord::Schema.define(:version => 20130820212225) do
     t.string   "uid"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "in_arena",   :default => false
   end
 
 end

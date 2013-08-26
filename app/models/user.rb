@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :provider, :uid
+  attr_accessible :email, :name, :provider, :uid, :in_arena
 
   def self.create_with_omniauth(auth)
     create! do |user|
