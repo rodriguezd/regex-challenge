@@ -2,12 +2,10 @@ class ChallengesController < ApplicationController
 
   def regex_play
     @friends = User.where(:in_arena => true)
-    id = rand(1..InputString.count)
-    input_string = InputString.find(id)
-    @string = input_string.string
-    id = input_string.output_strings.map{|string| string.id}.sample
-    output_string = OutputString.find(id)
-    @expected_output = output_string.string
+    id = rand(1..InputOutputString.count)
+    challenge = InputOutputString.find(id)
+    @string = InputString.find(challenge.input_string_id).string
+    @expected_output = OutputString.find(challenge.output_string_id).string
     @correct = ' '
     @submission = ""
   end
@@ -24,17 +22,14 @@ class ChallengesController < ApplicationController
     else
       @correct = false
     end
-    # render :action => :regex_play
   end
 
   def output_play
     @friends = User.where(:in_arena => true)
-    id = rand(1..InString.count)
-    input_string = InString.find(id)
-    @input = input_string.string
-    id = input_string.regexs.map{|regex| regex.id}.sample
-    regex = Regex.find(id)
-    @regex = regex.expression
+    id = rand(1..InStringRegex.count)
+    challenge = InStringRegex.find(id)
+    @input = InString.find(challenge.in_string_id).string
+    @regex = Regex.find(challenge.regex_id).expression
     @correct = ' '
     @submission = ""
   end
@@ -51,7 +46,6 @@ class ChallengesController < ApplicationController
     else
       @correct = false
     end
-    # render :action => :output_play
   end
 
   def friends_list
