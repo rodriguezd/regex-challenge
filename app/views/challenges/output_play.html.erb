@@ -20,10 +20,10 @@
         <%= hidden_field_tag :regex, @regex %>
         <br><br>
         <h3> Output: </h3>
-        <div class="input-prepend input-append span4">
-          <span class="add-on"><b>"</b></span>
-          <input name="submission" value="<%= @submission %>" class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px;">
-          <span class="add-on"><b>"</b></span>
+        <div class="input-prepend input-append span9">
+          <span class="add-on" style="border:2px solid;"><b>"</b></span>
+          <input name="submission" value="<%= @submission %>" class="span4" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px; border:2px solid;">
+          <span class="add-on" style="border:2px solid;"><b>"</b></span>
         </div>
         <br><br>
         <h4 style="float: left;">Timer: </h4><span id="sinceCompact" class="countdown">
