@@ -28,8 +28,14 @@ $(function() {
 
   });
 
+  $("#exit_arena").hide();
+  $("#enter_arena").click(function(){
+    $("#enter_arena").hide();
+    $("#exit_arena").show();
+  });
 
-
-
-
+  $("#exit_arena").click(function(){
+    $("#exit_arena").hide();
+    $("#enter_arena").show();
+  });
 });

@@ -1,7 +1,7 @@
 class ChallengesController < ApplicationController
 
   def regex_play
-    @friends = User.all
+    @friends = User.where(:in_arena => true)
     id = rand(1..InputString.count)
     input_string = InputString.find(id)
     @string = input_string.string
@@ -13,7 +13,7 @@ class ChallengesController < ApplicationController
   end
 
   def regex_check
-    @friends = User.all
+    @friends = User.where(:in_arena => true)
     @time = params[:time].split(',')
     @submission = params[:submission]
     @string = params[:string]
@@ -28,7 +28,7 @@ class ChallengesController < ApplicationController
   end
 
   def output_play
-    @friends = User.all
+    @friends = User.where(:in_arena => true)
     id = rand(1..InString.count)
     input_string = InString.find(id)
     @input = input_string.string
@@ -40,7 +40,7 @@ class ChallengesController < ApplicationController
   end
 
   def output_check
-    @friends = User.all
+    @friends = User.where(:in_arena => true)
     @time = params[:time].split(',')
     @submission = params[:submission]
     @input = params[:input]
@@ -55,7 +55,7 @@ class ChallengesController < ApplicationController
   end
 
   def friends_list
-    @friends = User.all
+    @friends = User.where(:in_arena => true)
   end
 
 end
