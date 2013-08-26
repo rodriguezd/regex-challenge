@@ -49,6 +49,10 @@ Welcome <%= current_user.name %>
       <%= link_to "Update", challenges_friends_list_path, :class => "btn btn-primary", :id => "update_friends", :style => "display: inline-block; float: left;  clear: left;", :remote => true%>
       <%= link_to "Enter Arena", users_enter_arena_path, :class => "btn btn-primary", :id => "enter_arena", :style => "display: inline-block; float: left; margin-left: 1%;", :remote => true %>
       <%= link_to "Exit Arena", users_exit_arena_path, :class => "btn btn-primary", :id => "exit_arena", :style => "display: inline-block; float: left; margin-left: 1%;", :remote => true %>
+
+      <div class="span8" id="leader_board" style="height: 200px; border: 2px solid; clear:both; margin-bottom: 3%; margin-top: 8%;">
+        <%= render 'shared/friends_list' %>
+      </div>
     </div>
   </div>
 </div>
