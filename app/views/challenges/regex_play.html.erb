@@ -15,6 +15,7 @@ Welcome <%= current_user.name %>
           <%= @string %>
         </div>
         <%= hidden_field_tag :string, @string %>
+        <%= hidden_field_tag :challenge_id, @challenge_id %>
         <br><br>
         <h3>Desired output:</h3>
         <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">

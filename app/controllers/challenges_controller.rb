@@ -2,8 +2,8 @@ class ChallengesController < ApplicationController
 
   def regex_play
     @friends = User.where(:in_arena => true)
-    id = rand(1..InputOutputString.count)
-    challenge = InputOutputString.find(id)
+    @challenge_id = rand(1..InputOutputString.count)
+    challenge = InputOutputString.find(@challenge_id)
     @string = InputString.find(challenge.input_string_id).string
     @expected_output = OutputString.find(challenge.output_string_id).string
     @correct = ' '
@@ -19,6 +19,10 @@ class ChallengesController < ApplicationController
     @current_output = @string.scan(eval("/#{@submission}/")).flatten.join(' ')
     if @current_output == @expected_output
       @correct = true
+      user_time = @time.pop.to_i + @time.pop.to_i * 60
+      RegexChallengeUserTime.create(:user_id => current_user.id,
+        :input_output_id => params[:challenge_id],
+        :time => user_time)
     else
       @correct = false
     end
@@ -43,6 +47,7 @@ class ChallengesController < ApplicationController
     @correct_output = @input.scan(eval("/#{@regex}/")).flatten.join(' ')
     if @submission == @correct_output
       @correct = true
+      @user_time = @time.pop.to_i + @time.pop.to_i * 60
     else
       @correct = false
     end

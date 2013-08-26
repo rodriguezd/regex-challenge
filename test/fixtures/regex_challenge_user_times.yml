@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  input_output_id: 1
+  user_id: 1
+  time: 1
+
+two:
+  input_output_id: 1
+  user_id: 1
+  time: 1

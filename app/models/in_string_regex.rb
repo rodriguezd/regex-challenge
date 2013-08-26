@@ -3,4 +3,5 @@ class InStringRegex < ActiveRecord::Base
 
   belongs_to :in_string
   belongs_to :regex
+
 end
