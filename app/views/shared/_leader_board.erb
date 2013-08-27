@@ -1,12 +1,12 @@
-<table>
+<table style="table-layout: fixed;">
   <tr>
-    <th> User </th>
+    <th style="width: 85%;"> User </th>
     <th> Time </th>
   </tr>
   <% if !@board_times.nil? %>
     <% @board_times.each do |time| %>
       <tr>
-        <td> <%= User.find(time.user_id).name %></td>
+        <td style="width: 87%;"> <%= User.find(time.user_id).name %></td>
         <td> <%= time.time/60 %>:<%= sprintf('%02d', time.time%60) %> </td>
       </tr>
     <% end %>
