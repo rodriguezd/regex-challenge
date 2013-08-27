@@ -20,12 +20,9 @@ $(function() {
   $('#sinceCompact').countdown({since: '-' + reset_time.split(' ')[5] + 'm '+ '-' + reset_time.split(' ')[6] + 's', compact: true,
     format: 'MS', description: ''});
 
-
   $("#submit").click(function() {
     var time = $('#sinceCompact').countdown('getTimes');
     $("#time").val(time);
-  //  return false;
-
   });
 
   $("#exit_arena").hide();
@@ -39,5 +36,7 @@ $(function() {
     $("#enter_arena").show();
   });
 
-
+  $(function() {
+    $("tr:odd").css("background-color", "#ffad33");
+  });
 });

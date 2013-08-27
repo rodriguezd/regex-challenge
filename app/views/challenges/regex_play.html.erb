@@ -3,7 +3,7 @@
 <%= link_to "Sign out", signout_path %>
 <% end %>
 <h1 style="text-align: center;color: orange;">* Regex Challenge *</h1>
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 4%;">
   <div class="row-fluid">
     <div class="span6">
       <%= link_to 'Output Challenge', challenges_output_play_path, :class => "btn btn-warning" %>
@@ -32,28 +32,31 @@
         <div id="timer">
           <h4 style="float: left; position: relative; bottom: 11px;">Time: </h4>
           <span id="sinceCompact" class="countdown" style="position: relative; left: 1%;">
-          <!-- <span class="countdown_row countdown_amount"></span> -->
           </span>
         </div>
-        <br><br>
-        <%= button_tag 'Submit Regex', :class => "btn btn-primary", :id => "submit" %>
-        <br><br>
-        <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-warning", :id => "next_challenge" %>
+        <div id="submit_next">
+          <br>
+          <%= button_tag 'Submit Regex', :class => "btn btn-primary", :id => "submit" %>
+          <br><br>
+          <%= link_to 'Next Challenge', challenges_regex_play_path, :class => "btn btn-warning", :id => "next_challenge" %>
+      </div>
         <%= hidden_field_tag :time, @time, :id => "time"%>
       <% end %>
-      <div id="regex_results">
+      <div id="regex_results"></div>
 
-      </div>
     </div>
     <div class="span6">
-      <div class="span8" id="friends_list" style="height: 200px; border: 2px solid; clear:right; margin-bottom: 3%;">
+      <h3 class="span8" style="text-align: center;color: orange; margin: 0; line-height: 0">Looking For A Challenge</h3>
+      <div class="span8" id="friends_list" style="height: 200px; border: 2px solid; clear:right; margin-bottom: 3%; background-color: #E2E9E7">
         <%= render 'shared/friends_list' %>
       </div>
+      <div style="padding-left: 2%">
       <%= link_to "Update", challenges_friends_list_path, :class => "btn btn-primary", :id => "update_friends", :style => "display: inline-block; float: left;  clear: left;", :remote => true%>
       <%= link_to "Enter Arena", users_enter_arena_path, :class => "btn btn-primary", :id => "enter_arena", :style => "display: inline-block; float: left; margin-left: 1%;", :remote => true %>
       <%= link_to "Exit Arena", users_exit_arena_path, :class => "btn btn-primary", :id => "exit_arena", :style => "display: inline-block; float: left; margin-left: 1%;", :remote => true %>
-
-      <div class="span8" id="leader_board" style="height: 200px; border: 2px solid; clear:both; margin-bottom: 3%; margin-top: 8%;">
+      </div>
+      <h3 class="span8" style="text-align: center;color: orange; margin: 0; line-height: 0; float: left; clear: left; margin-top: 8%">Leader Board</h3>
+      <div class="span8" id="leader_board" style="height: 200px; border: 2px solid; clear:both; margin-bottom: 3%; background-color: #E2E9E7">
         <%= render 'shared/leader_board' %>
       </div>
     </div>

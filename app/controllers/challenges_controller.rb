@@ -6,7 +6,7 @@ class ChallengesController < ApplicationController
     challenge = InputOutputString.find(@challenge_id)
     @string = InputString.find(challenge.input_string_id).string
     @expected_output = OutputString.find(challenge.output_string_id).string
-    @board_times = RegexChallengeUserTime.where(:input_output_id => @challenge_id)
+    @board_times = RegexChallengeUserTime.where(:input_output_id => @challenge_id).order('time')
     @correct = ' '
     @submission = ""
   end
