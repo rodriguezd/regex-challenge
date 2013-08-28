@@ -21,14 +21,6 @@
   padding: 0;
  }
 
- /*#landing-container {
-  background: url("regex.jpg") center center fixed;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  margin: 0;
- }*/
-
  .container-fluid {
   height: 100%;
  }
@@ -36,10 +28,3 @@
  .row-fluid {
   height: 100%;
  }
-
-
- /*.centering{
-float:none;
-margin:0 auto
-}
-*/

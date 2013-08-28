@@ -25,18 +25,18 @@ $(function() {
     $("#time").val(time);
   });
 
-  $("#exit_arena").hide();
+  $("#enter_arena").hide();
+  $("#exit_arena").click(function(){
+    $("#enter_arena").show();
+    $("#exit_arena").hide();
+  });
+
   $("#enter_arena").click(function(){
     $("#enter_arena").hide();
     $("#exit_arena").show();
   });
 
-  $("#exit_arena").click(function(){
-    $("#exit_arena").hide();
-    $("#enter_arena").show();
-  });
 
-  $(function() {
-    $("tr:odd").css("background-color", "#ffad33");
-  });
+  $("tr:odd").css("background-color", "#ffad33");
+
 });
