@@ -16,7 +16,7 @@
 
 $(function() {
   var reset_time = $("#time").val();
-  console.log(reset_time.split(' '));
+  // console.log(reset_time.split(' '));
   $('#sinceCompact').countdown({since: '-' + reset_time.split(' ')[5] + 'm '+ '-' + reset_time.split(' ')[6] + 's', compact: true,
     format: 'MS', description: ''});
 
@@ -37,6 +37,6 @@ $(function() {
   });
 
 
-  $("tr:odd").css("background-color", "#ffad33");
+  // $("tr:odd").css("background-color", "#ffad33");
 
 });
