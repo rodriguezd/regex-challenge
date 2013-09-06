@@ -15,20 +15,39 @@
  *= require_self
  */
 
- html, body{
-  height: 100%;
-  margin: 0;
-  padding: 0;
- }
+html, body{
+height: 100%;
+margin: 0;
+padding: 0;
+}
 
- .container-fluid {
-  height: 100%;
- }
+.container-fluid {
+height: 100%;
+margin-top: 4%;
+}
 
- .row-fluid {
-  height: 100%;
- }
+.row-fluid {
+height: 100%;
+}
 
- tr:nth-child(odd) {
-  background-color: #ffad33;
- };
+tr:nth-child(odd) {
+background-color: #ffad33;
+}
+
+.page-title{
+  text-align: center;
+  color: orange;
+}
+
+.display-field{
+  border:2px solid;
+  float: left;
+  height: 2em;
+  font-size: 20px;
+  background-color: #E2E9E7;
+}
+
+/*#input-field{
+  font-size: 20px;
+  border:2px solid;
+}*/

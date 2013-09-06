@@ -2,22 +2,22 @@
 <% if current_user %>
 <%= link_to "Sign out", signout_path %>
 <% end %>
-<h1 style="text-align: center;color: orange;">* Regex Challenge *</h1>
-<div class="container-fluid" style="margin-top: 4%;">
+<h1 class="page-title">* Regex Challenge *</h1>
+<div class="container-fluid">
   <div class="row-fluid">
     <div class="span6">
       <%= link_to 'Output Challenge', challenges_output_play_path, :class => "btn btn-warning" %>
 
       <%= form_tag challenges_regex_check_path, :remote => true do%>
         <h3>Input string:</h3>
-        <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
+        <div class="span4 display-field">
           <%= @string %>
         </div>
         <%= hidden_field_tag :string, @string %>
         <%= hidden_field_tag :challenge_id, @challenge_id %>
         <br><br>
         <h3>Desired output:</h3>
-        <div class="span4" style="border:2px solid;float: left; height: 2em; font-size: 20px;background-color: #E2E9E7">
+        <div class="span4 display-field">
             <%= @expected_output %>
         </div>
         <%= hidden_field_tag :expected_output, @expected_output %>
