@@ -10,14 +10,14 @@
 
       <%= form_tag challenges_regex_check_path, :remote => true do%>
         <h3>Input string:</h3>
-        <div class="span4 display-field">
+        <div class="span5 display-field">
           <%= @string %>
         </div>
         <%= hidden_field_tag :string, @string %>
         <%= hidden_field_tag :challenge_id, @challenge_id %>
         <br><br>
         <h3>Desired output:</h3>
-        <div class="span4 display-field">
+        <div class="span5 display-field">
             <%= @expected_output %>
         </div>
         <%= hidden_field_tag :expected_output, @expected_output %>
@@ -25,7 +25,7 @@
         <h3> Regex: </h3>
         <div class="input-prepend input-append span4">
           <span class="add-on" style="border:2px solid;"><b>/</b></span>
-          <input name="submission" value="<%= @submission %>" class="span9" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px; border:2px solid;">
+          <input name="submission" value="<%= @submission %>" class="span12" id="appendedPrependedInput" type="text" autocomplete="off" style="font-size: 20px; border:2px solid;">
           <span class="add-on" style="border:2px solid;"><b>/</b></span>
         </div>
         <br><br><br>
