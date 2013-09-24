@@ -38,3 +38,5 @@ gem 'jquery-rails'
 gem 'debugger'
 gem 'better_errors'
 gem 'omniauth-github'
+
+gem 'faye'
